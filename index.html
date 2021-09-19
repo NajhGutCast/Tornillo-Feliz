@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        * {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        body {
+            background-image: url('img/bg.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+        }
+
+        #container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            backdrop-filter: blur(10px);
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        #content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            justify-content: center;
+            align-content: center;
+            text-align: center;
+            margin: auto;
+            max-width: 480px;
+        }
+        #content img {
+            width: 100px;
+            filter: drop-shadow(0 0 10px #000);
+            border-radius: 20px;
+            padding: 10px;
+        }
+        #content h1 {
+            text-shadow: 0 0 20px;
+            color: #17ace1;
+        }
+        #content h3,
+        #content p {
+            color: #17abe1aa;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="content">
+            <img src="img/logo.svg" alt="Tornillo Feliz">
+            <h1>Ferretería Tornillo Feliz</h1>
+            <h3>"Atenderte de la mejor manera es nuestra prioridad"</h3>
+            <p>
+                En tornillo felíz vendemos todo tipo de artículos, y los más importante,
+                solo tenemos artículos de calidad.
+            </p>
+        </div>
+    </div>
+    <script>
+        window.watsonAssistantChatOptions = {
+            integrationID: "27ada8c4-c1cc-40e9-bad6-377bc6b67c3a", // The ID of this integration.
+            region: "au-syd", // The region your integration is hosted in.
+            serviceInstanceID: "e3f4da94-afeb-47a2-9d1b-140a590a032a", // The ID of your service instance.
+            onLoad: function (instance) {
+                instance.render();
+            },
+        };
+        setTimeout(function () {
+            const t = document.createElement("script");
+            t.src =
+                "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" +
+                (window.watsonAssistantChatOptions.clientVersion || "latest") +
+                "/WatsonAssistantChatEntry.js";
+            document.head.appendChild(t);
+        });
+    </script>
+</body>
+
+</html>
